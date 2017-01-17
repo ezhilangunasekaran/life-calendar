@@ -4,10 +4,12 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { WeekComponent } from './week/week.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    WeekComponent
   ],
   imports: [
     BrowserModule,
