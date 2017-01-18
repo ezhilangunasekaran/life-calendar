@@ -7,6 +7,7 @@ export class WeekService extends Init{
 
 
   constructor() { super();
+    console.log("Week service started");
     this.load();
   }
 
