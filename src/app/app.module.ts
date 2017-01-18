@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { WeekComponent } from './week/week.component';
+import { WeekService } from './services/week.service';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,7 @@ import { WeekComponent } from './week/week.component';
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [ WeekService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
