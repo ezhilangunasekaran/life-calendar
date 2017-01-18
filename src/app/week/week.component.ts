@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Week} from "../week"; (Week)
 import {WeekService} from "../services/week.service"; (WeekService)
+import { MdSidenav,MdDialog, MdDialogRef } from '@angular/material';
 
 @Component({
   selector: 'app-week',
