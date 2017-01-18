@@ -13,6 +13,9 @@ import { WeekService } from './services/week.service';
     AppComponent,
     WeekComponent
   ],
+  entryComponents: [
+    AppComponent,WeekComponent
+  ],
   imports: [
     BrowserModule,
     FormsModule,
