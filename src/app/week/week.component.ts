@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Week} from "../week"; (Week)
 import {WeekService} from "../services/week.service"; (WeekService)
-import { MdSidenav,MdDialog, MdDialogRef } from '@angular/material';
+import { CapturedobComponent } from '../capturedob/capturedob.component'
+import { MdDialog } from '@angular/material';
 
 @Component({
   selector: 'app-week',
@@ -10,26 +11,32 @@ import { MdSidenav,MdDialog, MdDialogRef } from '@angular/material';
 })
 export class WeekComponent implements OnInit {
   weeks = this._weekService.getWeeks();
-  weekarr : Object[] = (function(){
-    var input = [];
-    const MAX_AGE = 4693;
-    const ONE_DAY = 1000*60*60*24;
-    var dob = new Date(localStorage.getItem('lc-dob')).getTime();
-    var current_week = Math.round(((new Date().getTime()-dob)/ONE_DAY)/7);
-    for (let i = 1; i <= MAX_AGE; i++) {
-      if(i<current_week){
-        input.push([{no:i,class:"current"}]);
-      }else{
-        input.push([{no:i}]);
-      }
-    }
-    return input;
-  }());
-  constructor(private _weekService: WeekService) { }
+  weekarr : Object[] = this._weekService.getCurrentWeeks();
+  enteredDob: string;
+  constructor(private _weekService: WeekService,public _dialog: MdDialog) { }
 
-  ngOnInit() {
+  dobDialog(){
+    let dialogRef = this._dialog.open(CapturedobComponent);
+    dialogRef.afterClosed().subscribe(result =>{
+      this.enteredDob = result;
+      this._weekService.setDob(result);
+      this.weekarr = this._weekService.getCurrentWeeks();
+    })
   }
 
+  ngOnInit() {
+
+  }
+  //for adding class
+  eventsNgClass(current,eventWeek){
+    if(eventWeek != undefined){
+      return 'eventWeek';
+    } else if(current != undefined){
+      return 'current';
+    }
+  }
+
+  //CRUD operation
   addWeekEvent(newweek){
     var singleWeek: Week;
     const ONE_DAY = 1000*60*60*24;
