@@ -54,6 +54,7 @@ export class WeekService extends Init{
       this.weeks[singleweek.weekId] = [];
     }
     this.weeks[singleweek.weekId].push(singleweek.weekTitle);
+    localStorage.setItem('life-calendar',JSON.stringify(this.weeks));
   return this;
   }
 
