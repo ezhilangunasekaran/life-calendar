@@ -1,0 +1,15 @@
+<form *ngIf="chkDob != null">
+  <md-input-container class="md-input-has-value" flex>
+    <input md-input placeholder="your event title" [(ngModel)]="nuweek" name="nuweek">
+  </md-input-container>
+  <ng2-datepicker [options]="Date" [(ngModel)]="nuweekdate" name="nuweekdate"></ng2-datepicker>
+  <button md-raised-button (click)="dialogRef.close({title:nuweek,nweek:nuweekdate.formatted})" type="button">
+    submit
+  </button>
+</form>
+<div *ngIf="chkDob == null">
+  please add your Date of Birth!
+  <button md-raised-button (click)="dialogRef.close()" type="button">
+    Close
+  </button>
+</div>
