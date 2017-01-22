@@ -4,7 +4,7 @@
     <span>Life Calendar</span>
   </span>
   <button type="button" md-button (click)="dobDialog()" class="dobButton">
-    Change your DOB
+    Add your DOB
   </button>
   <button md-mini-fab type="button" (click)="addweekDialog()" >
     <md-icon>add</md-icon>
@@ -13,9 +13,26 @@
 
 
 <md-sidenav-layout>
+  <md-sidenav align="end" mode="side" #sidenav>
+    <md-list>
+      <h3>Events</h3>
+      <md-list-item *ngFor="let singleEvent of listWeekEvents;let i=index">
+        <span> <md-icon md-list-avatar>event</md-icon>{{singleEvent}}</span>
+        <button md-icon-button (click)="deleteWeekEvent(i,currentWeekIndex)">
+          <md-icon>delete</md-icon>
+        </button>
+      </md-list-item>
+
+    </md-list>
+    <button md-raised-button (click)="sidenav.close()" color="accent" class="sidebar-close">
+      close
+    </button>
+  </md-sidenav>
+
   <md-grid-list class="weeks" cols="104" >
     <md-grid-tile  *ngFor="let week of weekarr;let m = index" [ngClass]="eventsNgClass(week[0].class,weeks[week[0].no])" md-tooltip="{{week[0].no}}">
-
+      <button md-icon-button *ngIf="weeks[week[0].no]" (click)="showWeek(weeks[week[0].no],week[0].no)">
+      </button>
     </md-grid-tile>
   </md-grid-list>
 </md-sidenav-layout>

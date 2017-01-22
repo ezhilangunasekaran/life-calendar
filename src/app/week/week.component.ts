@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import {Week} from "../week"; (Week)
 import {WeekService} from "../services/week.service"; (WeekService)
 import { CapturedobComponent } from '../capturedob/capturedob.component'
 import { AddweekdialogComponent } from '../addweekdialog/addweekdialog.component';
-import { MdDialog } from '@angular/material';
+import { MdDialog,MdSidenav } from '@angular/material';
 
 @Component({
   selector: 'app-week',
@@ -17,8 +17,7 @@ export class WeekComponent implements OnInit {
   // list of weeks and their corresponding events from localStorage
   weeks = JSON.parse(localStorage.getItem('life-calendar'));
 
-  enteredDob: string;
-  lastDialogResult: Object;
+
   singleWeek: Week = {weekId:0,weekTitle:null};
   deleteWeek: Week;
 
@@ -28,7 +27,6 @@ export class WeekComponent implements OnInit {
   dobDialog(){
     let dialogRef = this._dialog.open(CapturedobComponent);
     dialogRef.afterClosed().subscribe(result =>{
-      this.enteredDob = result;
       this._weekService.setDob(result);
       this.weekarr = this._weekService.getCurrentWeeks();
     })
@@ -38,8 +36,9 @@ export class WeekComponent implements OnInit {
   addweekDialog(){
     let dialogRef = this._dialog.open(AddweekdialogComponent);
     dialogRef.afterClosed().subscribe(result => {
-      this.lastDialogResult = result;
-      this.addWeekEvent(this.lastDialogResult);
+      if(result != undefined){
+        this.addWeekEvent(result);
+      }
     })
   }
 
@@ -53,6 +52,17 @@ export class WeekComponent implements OnInit {
     } else if(current != undefined){
       return 'current';
     }
+  }
+
+  // for sidebar
+  @ViewChild('sidenav') sidenav: MdSidenav;
+  listWeekEvents = [];
+  currentWeekIndex;
+
+  showWeek(wk,cwi){
+    this.currentWeekIndex = cwi;
+    this.listWeekEvents = wk;
+    this.sidenav.open();
   }
 
   //CRUD operation

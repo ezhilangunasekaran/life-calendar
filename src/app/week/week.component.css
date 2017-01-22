@@ -5,8 +5,13 @@ md-toolbar{
 .datepicker-container[_ngcontent-toy-40]   .datepicker-calendar[_ngcontent-toy-40]{
   position: relative !important;
 }
-
-
+md-sidenav{
+  width: 310px;
+  padding: 5px;
+}
+.sidebar-close{
+  width:100%;
+}
 md-grid-list{
   margin:20px;
 }
