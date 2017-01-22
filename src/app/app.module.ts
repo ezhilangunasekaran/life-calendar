@@ -9,15 +9,17 @@ import { AppComponent } from './app.component';
 import { WeekComponent } from './week/week.component';
 import { WeekService } from './services/week.service';
 import { CapturedobComponent } from './capturedob/capturedob.component';
+import { AddweekdialogComponent } from './addweekdialog/addweekdialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WeekComponent,
-    CapturedobComponent
+    CapturedobComponent,
+    AddweekdialogComponent
   ],
   entryComponents: [
-    AppComponent,WeekComponent,CapturedobComponent
+    AppComponent,WeekComponent,CapturedobComponent,AddweekdialogComponent
   ],
   imports: [
     BrowserModule,
