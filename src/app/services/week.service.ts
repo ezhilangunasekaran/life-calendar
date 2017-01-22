@@ -64,6 +64,7 @@ export class WeekService extends Init{
     if(this.weeks[singleweek.weekId].length == 0){
       delete this.weeks[singleweek.weekId];
     }
+    localStorage.setItem('life-calendar',JSON.stringify(this.weeks));
     return this;
   }
 
