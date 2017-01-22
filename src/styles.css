@@ -14,6 +14,14 @@ md-toolbar-row{
 }
 app-capturedob{
   width: 250px;
-  height: 420px;
+  height: auto;
   float: left;
+}
+app-addweekdialog{
+  width: 600px;
+  height: auto;
+  float: left;
+}
+.datepicker-calendar{
+  position: fixed !important;
 }
