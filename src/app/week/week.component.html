@@ -1,3 +1,21 @@
-<p>
-  week works!
-</p>
+<md-toolbar color="primary" >
+  <span>
+  <md-icon>event_note</md-icon>
+    <span>Life Calendar</span>
+  </span>
+  <button type="button" md-button (click)="dobDialog()" class="dobButton">
+    Change your DOB
+  </button>
+  <button md-mini-fab >
+    <md-icon>add</md-icon>
+  </button>
+</md-toolbar>
+
+
+<md-sidenav-layout>
+  <md-grid-list class="weeks" cols="104" >
+    <md-grid-tile  *ngFor="let week of weekarr;let m = index" [ngClass]="eventsNgClass(week[0].class,weeks[week[0].no])" md-tooltip="{{week[0].no}}">
+
+    </md-grid-tile>
+  </md-grid-list>
+</md-sidenav-layout>
