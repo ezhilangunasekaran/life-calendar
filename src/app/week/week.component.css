@@ -1,0 +1,36 @@
+md-toolbar{
+  background: #87cfe5 !important;
+}
+
+.datepicker-container[_ngcontent-toy-40]   .datepicker-calendar[_ngcontent-toy-40]{
+  position: relative !important;
+}
+
+
+md-grid-list{
+  margin:20px;
+}
+
+.current{
+  background: lightblue !important;
+}
+.eventWeek{
+  background:  lightgreen;
+}
+md-grid-tile{
+  background: #ddd;
+}
+[md-mini-fab]{
+  position: fixed;
+  bottom: 34px;
+  z-index: 1;
+  right: 3%;
+}
+[md-icon]{
+  color: white;
+}
+.dobButton{
+  color: #666;
+  background: #fff;
+  opacity: 0.8;
+}
