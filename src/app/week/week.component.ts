@@ -10,8 +10,8 @@ import { MdDialog } from '@angular/material';
   styleUrls: ['./week.component.css']
 })
 export class WeekComponent implements OnInit {
-  weeks = this._weekService.getWeeks();
   weekarr : Object[] = this._weekService.getCurrentWeeks();
+  weeks = JSON.parse(localStorage.getItem('life-calendar'));
   enteredDob: string;
   constructor(private _weekService: WeekService,public _dialog: MdDialog) { }
 
