@@ -13,7 +13,7 @@ md-toolbar-row{
   justify-content:space-between;
 }
 app-capturedob{
-  width: 250px;
+  width: 300px;
   height: auto;
   float: left;
 }
