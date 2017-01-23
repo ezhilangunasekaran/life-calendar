@@ -43,6 +43,7 @@ export class WeekService extends Init{
     //console.log(input);
     return input;
   }
+
   weeks: {} = JSON.parse(localStorage.getItem('life-calendar'));
 
   getWeeks(){
@@ -50,6 +51,8 @@ export class WeekService extends Init{
   }
 
   addWeekEvent(singleweek: Week): WeekService{
+    this.weeks = JSON.parse(localStorage.getItem('life-calendar'));
+    console.log(this.weeks);
     if(!this.weeks[singleweek.weekId]){
       this.weeks[singleweek.weekId] = [];
     }

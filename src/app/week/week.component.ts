@@ -20,7 +20,7 @@ export class WeekComponent implements OnInit {
 
   lastDialogResult: Object;
   singleWeek: Week = {weekId:0,weekTitle:null};
-  deleteWeek: Week;
+  deleteWeek: Week = {weekId:0,weekTitle:null};
 
   constructor(private _weekService: WeekService,public _dialog: MdDialog) { }
 
@@ -92,12 +92,12 @@ export class WeekComponent implements OnInit {
   }
 
   deleteWeekEvent(index,mainindex){
-    this.weeks[mainindex].splice(index,1);
+    let getDelEvent = this.weeks[mainindex].splice(index,1);
     if(this.weeks[mainindex].length ==0){
       delete this.weeks[mainindex];
     }
     this.deleteWeek.weekId = mainindex;
-    this.deleteWeek.weekTitle = index.replace(/<(?:.|\n)*?>/gm, '');
+    this.deleteWeek.weekTitle = getDelEvent;
     this._weekService.deleteWeekEvent(this.deleteWeek);
   }
 }
