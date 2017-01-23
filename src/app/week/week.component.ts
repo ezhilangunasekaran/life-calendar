@@ -18,6 +18,7 @@ export class WeekComponent implements OnInit {
   weeks = JSON.parse(localStorage.getItem('life-calendar'));
 
 
+  lastDialogResult: Object;
   singleWeek: Week = {weekId:0,weekTitle:null};
   deleteWeek: Week;
 
@@ -27,6 +28,7 @@ export class WeekComponent implements OnInit {
   dobDialog(){
     let dialogRef = this._dialog.open(CapturedobComponent);
     dialogRef.afterClosed().subscribe(result =>{
+
       this._weekService.setDob(result);
       this.weekarr = this._weekService.getCurrentWeeks();
     })
@@ -36,8 +38,9 @@ export class WeekComponent implements OnInit {
   addweekDialog(){
     let dialogRef = this._dialog.open(AddweekdialogComponent);
     dialogRef.afterClosed().subscribe(result => {
+      this.lastDialogResult = result;
       if(result != undefined){
-        this.addWeekEvent(result);
+        this.addWeekEvent(this.lastDialogResult);
       }
     })
   }
