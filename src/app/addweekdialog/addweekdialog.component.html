@@ -1,4 +1,4 @@
-<form>
+<form *ngIf="chkDob != null">
   <md-input-container class="md-input-has-value" flex>
     <input md-input placeholder="your event title" [(ngModel)]="nuweek" name="nuweek">
   </md-input-container>
@@ -7,3 +7,9 @@
     submit
   </button>
 </form>
+<div *ngIf="chkDob == null">
+  Add your DOB first!
+  <button md-raised-button (click)="dialogRef.close()" type="button">
+    Close
+  </button>
+</div>
