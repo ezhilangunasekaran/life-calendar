@@ -1,31 +1,16 @@
 # LifeCalendar
 
-This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.24.
+Inspired by TED talk of Tim Urban (Inside the mind of a master procrastinator - https://www.youtube.com/watch?v=arj7oStGLkU). 
 
-## Development server
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Built using angular2 and material design.
 
-## Code scaffolding
+Live: https://ezhilangunasekaran.github.io/life-calendar/
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class/module`.
+Usage:
+Add your date of birth to see where you currently lie in a 90yrs life span.
+Each box is a week, blue represents your past weeks and green indicates a event week.
+Add your personal week events to see wholesome view of your past and future life.
+Click on green box to view and modify your events.
+Each row is approximately 2 years(104 wks)
+Total no of boxes are 4693 or 90yrs.
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
-
-## Deploying to Github Pages
-
-Run `ng github-pages:deploy` to deploy to Github Pages.
-
-## Further help
-
-To get more help on the `angular-cli` use `ng help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
