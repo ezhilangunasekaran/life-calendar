@@ -5,7 +5,8 @@ Inspired by TED talk of Tim Urban (Inside the mind of a master procrastinator - 
 Built using angular2 and material design.
 
 Live: https://ezhilangunasekaran.github.io/life-calendar/
-
+<img src="https://raw.githubusercontent.com/ezhilangunasekaran/life-calendar/gh-pages/life-calendar.gif"/>
+<br>
 Usage:
 <ul>
 <li>Add your date of birth to see where you currently lie in a 90yrs life span.</li>
